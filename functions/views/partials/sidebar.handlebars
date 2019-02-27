@@ -1,0 +1,40 @@
+<div class="sidebar">
+  <div class="featured-posts-container">
+    <h4>Featured</h4>
+    <div class="featured-posts-body-primary card-shadow">
+      <a class="card-default-link" href="/articles/{{sidebars.0.id}}"></a>
+      <img class="lazy" src="{{sidebars.0.lqip_image_download_url}}" data-src="{{sidebars.0.image_download_url}}"
+        alt="Image Not Found" onerror="this.onerror=null;this.src='/default-article-image.jpg';" />
+      <div class="d-flex flex-column align-items-start justify-content-end featured-posts-title-date-container-primary">
+        <div class="featured-posts-title-primary">{{sidebars.0.title}}</div>
+        <div class="featured-posts-date-primary">{{sidebars.0.date}}</div>
+      </div>
+    </div>
+    <div class="featured-posts-body-secondary card-shadow">
+      <a class="card-default-link" href="/articles/{{sidebars.1.id}}"></a>
+      <img class="featured-posts-img-secondary lazy" src="{{sidebars.1.lqip_image_download_url}}" data-src="{{sidebars.1.image_download_url}}"
+        alt="Image Not Found" onerror="this.onerror=null;this.src='/default-article-image.jpg';" />
+      <div class="d-flex flex-column align-items-start justify-content-end featured-posts-title-date-container-primary">
+        <div class="featured-posts-title-secondary">{{sidebars.1.title}}</div>
+        <div class="featured-posts-date-secondary">{{sidebars.1.date}}</div>
+      </div>
+    </div>
+    <div class="featured-posts-body-secondary card-shadow">
+      <a class="card-default-link" href="/articles/{{sidebars.2.id}}"></a>
+      <img class="featured-posts-img-secondary lazy" src="{{sidebars.2.lqip_image_download_url}}" data-src="{{sidebars.2.image_download_url}}"
+        alt="Image Not Found" onerror="this.onerror=null;this.src='/default-article-image.jpg';" />
+      <div class="d-flex flex-column align-items-start justify-content-end featured-posts-title-date-container-primary">
+        <div class="featured-posts-title-secondary">{{sidebars.2.title}}</div>
+        <div class="featured-posts-date-secondary">{{sidebars.2.date}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="tags-container">
+    <h4>Tags</h4>
+    <div class="d-flex flex-row justify-content-start tags-body">
+      {{#each tagList}}
+        <a href="/tag/{{this}}"><div class="tag-display">{{this}}</div></a>
+      {{/each}}
+    </div>
+  </div>
+</div>

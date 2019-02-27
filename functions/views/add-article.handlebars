@@ -1,0 +1,53 @@
+{{!-- Add Article Page --}}
+{{> page-header header='Add Article'}}
+<!-- Add Article Form -->
+<div class="page-margin smoke pb-5">
+  <form method="POST" action="add-article" enctype="multipart/form-data">
+    <div class="form-row">
+      <div class="form-group col-sm-12 col-md-6">
+        <label for="title">Article Title</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Your Article Title Goes Here">
+      </div>
+      <div class="form-group col-sm-12 col-md-6">
+        <label for="author">Article Author</label>
+        <input type="text" class="form-control" id="author" name="author" placeholder="Your Name Goes Here">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="body">Article Body</label>
+      <textarea class="form-control keep-whitespace" id="body" name="body" rows="12" placeholder="Your Article Body Goes Here"></textarea>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-2">
+        <label for="publish">Publish</label>
+        <select class="form-control" id="publish" name="publish">
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+      </div>
+      <div class="form-group col-2">
+        <label for="tags">Tags</label>
+        <select class="form-control" id="tags" name="tags" multiple>
+          {{#each tagList}}
+            <option>{{this}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <div class="form-group col-3">
+        <label for="makeit">Make It Yours</label>
+        <textarea class="form-control" id="makeit" name="makeit" rows="5" cols="3"></textarea>
+      </div>
+      <div class="form-group col-5">
+        <label for="image">Image Upload</label>
+        <div class="form-row">
+          <input type="file" class="col-5 form-control-file" id="image" name="image" accept="image/*">
+          <div class="col-5 image-preview-container">
+            <img class="image-preview" id="preview" alt="Image Not Found">
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-lg btn-subscribe">Submit</button>
+  </form>
+</div>
+<script src="/scripts/preview-file.js"></script>

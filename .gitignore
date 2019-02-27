@@ -1,0 +1,13 @@
+node_modules
+
+*.rules
+
+.vscode
+
+.firebase
+
+firebase-config.json
+
+initialize-firebase.js
+
+sots-9e289-firebase-adminsdk-6iusb-f49168e100.json

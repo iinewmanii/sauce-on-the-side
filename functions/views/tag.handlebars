@@ -1,0 +1,16 @@
+{{> page-header header='Tag'}}
+<div class="col-12 page-padding vh1 smoke">
+  {{#if articles}}
+    {{#if articles.length}}
+  
+    {{#each articles}}
+    <div class="row mb-3">
+      <a class="col" href="/articles/{{id}}">{{id}}</a>
+    </div>
+    {{/each}}
+  
+    {{else}}
+  
+    {{/if}}
+  {{/if}}
+</div>

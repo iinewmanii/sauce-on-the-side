@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="Description" content="Service Industry Satire">
+  <title>Sauce On The Side &#8211; Service Industry Satire</title>
+  <meta property="fb:app_id"        content="353744975225618" />
+  <meta property="og:url"           content={{shareurl}} />
+  <meta property="og:type"          content="article" />
+  <meta property="og:image"         content="{{article.image_download_url}}" />
+  <meta property="og:title"         content="{{article.title}}" />
+  <meta property="og:description"   content="{{sharedescription}}" />
+
+  <link rel="icon" type="image/png" href="/sauce-logo-512-index.png">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/main-styles.css">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script defer src="/scripts/initialize-facebook.js"></script>
+  <script defer src="/scripts/initialize-twitter.js"></script>
+  <script defer src="/scripts/lazy.js"></script>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top nav-bg-color nav-shadow">
+    <div class="container-fluid d-flex flex-row flex-fill align-items-center nav-padding">
+      <a href="/" class="navbar-brand">
+        <img class="d-inline brand-icon" src="/sauce-logo-512-index.png" />
+        <div class="d-inline brand-text">SAUCE ON THE SIDE</div>
+      </a>
+
+      <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+        <span>
+          <svg class="navbar-toggler-style" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">
+            <path d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z" font-weight="400" font-family="sans-serif" white-space="normal" overflow="visible"/>
+          </svg>
+        </span>
+      </button>
+
+      <div id="navbarCollapse" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav ml-auto mr-3">
+          <li class="nav-item {{#if headlines}}active{{/if}}">
+            <a class="nav-link" id="headlines-button" href="/">Headlines</a>
+          </li>
+          <li class="nav-item {{#if random}}active{{/if}}">
+            <a class="nav-link" id="random-button" href="/random">Random</a>
+          </li>
+          <li class="nav-item {{#if about}}active{{/if}}">
+            <a class="nav-link" id="about-button" href="/about">About</a>
+          </li>
+        </ul>
+        <div class="d-inline">
+          <button id="subscribe-button" class="d-inline-block btn btn-lg navbar-btn btn-subscribe"
+            href="#">Subscribe</button>
+          <ul class="nav navbar-nav d-inline ml-3">
+            <li class="nav-item d-inline-block my-3">
+              <a href="https://twitter.com/SauceOTS">
+                <svg class="social-icon-svg social-icon-nav" width="26" height="26" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  {{> twitter-icon}}
+                </svg>
+              </a>
+            </li>
+            <li class="nav-item d-inline-block ml-3 my-3">
+              <a href="https://www.facebook.com/sauceots/">
+                <svg class="social-icon-svg social-icon-nav" width="26" height="26" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  {{> facebook-icon}}
+                </svg>
+              </a>
+            </li>
+            <li class="nav-item d-inline-block ml-3 my-3">
+              <a href="https://www.instagram.com/sauce.ots/">
+                <svg class="social-icon-svg social-icon-nav" width="26" height="26" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  {{> instagram-icon}}
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  {{{body}}}
+  <div id="fb-root"></div>
+
+</body>
+
+</html>

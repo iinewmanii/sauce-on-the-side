@@ -1,0 +1,23 @@
+<div class="row no-gutters">
+  <div class="col d-none d-md-block col-md-1 col-lg-1 col-xl-1">
+    <div class="card card-shadow border-light text-center mr-3 mt-1">
+      <div>
+        <h5 class="card-month">{{month}}</h5>
+        <h5 class="card-day">{{day}}</h5>
+      </div>
+    </div>
+  </div>
+  <div class="col d-block col-sm-12 col-md-11 col-lg-11 col-xl-11">
+    <div class="card card-shadow card-border">
+      <a class="card-default-link" href="/articles/{{id}}"></a>
+      <div class="card-image-wrapper">
+        <img class="card-image lazy" src="{{lqip_image_download_url}}"
+          data-src="{{image_download_url}}" alt="Image Not Found" onerror="this.onerror=null;this.src='/default-article-image.jpg';" />
+      </div>
+      <div class="card-body-over bg-white">
+        <h2 class="card-title">{{title}}</h2>
+        <p class="card-text">{{body}}</p>
+      </div>
+    </div>
+  </div>
+</div>

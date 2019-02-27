@@ -1,0 +1,55 @@
+{{!-- Edit Article Page --}}
+{{> page-header header='Edit Article'}}
+{{!-- Edit Article Form --}}
+<div class="page-margin smoke pb-5">
+  <form method="POST" action="/edit-article/{{articleObject.id}}" enctype="multipart/form-data">
+    <div class="form-row">
+      <div class="form-group col-sm-12 col-md-6">
+        <label for="title">Article Title</label>
+        <input type="text" class="form-control" id="title" name="title" value="{{articleObject.title}}">
+      </div>
+      <div class="form-group col-sm-12 col-md-6">
+        <label for="author">Article Author</label>
+        <input type="text" class="form-control" id="author" name="author" value="{{articleObject.author}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="body">Article Body</label>
+      <textarea class="form-control keep-whitespace" id="body" name="body" rows="12">{{articleObject.body}}</textarea>
+    </div>
+    <div class="row">
+      <div class="form-group col-2">
+        <label for="publish">Publish</label>
+        <select class="form-control" id="publish" name="publish">
+          <option value="1" {{#ifEqual publish '1'}}selected{{/ifEqual}}>Yes</option>
+          <option value="0" {{#ifEqual publish '0'}}selected{{/ifEqual}}>No</option>
+        </select>
+      </div>
+      <div class="form-group col-2">
+        <label for="tags">Tags</label>
+        <select class="form-control" id="tags" name="tags" multiple>
+          {{#each tagList}}
+            <option {{#ifIn this @root.articleObject.tags}}selected{{/ifIn}}>{{this}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <div class="form-group col-3">
+        <label for="makeit">Make It Yours</label>
+        <textarea class="form-control" id="makeit" name="makeit" rows="5" cols="3">{{#each articleObject.make_it}}{{@key}}: {{this}}, {{/each}}</textarea>
+      </div>
+      <div class="form-group col-5">
+        <label for="image">Image Upload</label>
+        <div class="form-row">
+          <input type="file" class="col-5 form-control-file" id="image" name="image" accept="image/*">
+          <div class="col-5 image-preview-container">
+            <img class="image-preview" src="{{articleObject.image_download_url}}" id="preview"
+              alt="Image Not Found">
+            <div class="text-center">Current Image</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-lg btn-subscribe">Update</button>
+  </form>
+</div>
+<script src="/scripts/preview-file.js"></script>

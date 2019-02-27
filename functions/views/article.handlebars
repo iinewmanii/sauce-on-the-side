@@ -1,0 +1,118 @@
+<div class="article-header smoke">
+  <div class="article-header-image-wrapper">
+    <img class="article-image lazy" src="{{article.lqip_image_download_url}}" data-src="{{article.image_download_url}}"
+      alt="Image Not Found" onerror="this.error=null;this.src='/default-article-image.jpg';"></img>
+  </div>
+  <div class="article-title-date-container d-flex flex-column align-items-center justify-content-center">
+    <div class="article-title">{{article.title}}</div>
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col-6 d-flex justify-content-end align-items-center pr-3 article-author-date-divider article-date">{{article.author}}</div>
+        <div class="col-6 d-flex justify-content-start align-items-center pl-3 article-date">{{article.date}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid h-100 mx-0 px-0 smoke">
+  <div class="row article-body-margin">
+    <div class="d-block col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 m-0 p-0 article-body smoke">
+      <pre class="article-format" id="article-body">
+        {{article.body}}
+      </pre>
+      <div class="make-it-form needs-validation" id="make-it-form">
+        {{#if article.make_it}}
+          {{#each article.make_it}}
+            <div class="form-row">
+              <div class="form-group col-12">
+                <label id="make-it-label" name="make-it-label">{{@key}}</label>
+                <input type="text" class="form-control" id="make-it-input" name="make-it-input"
+                  pattern="[A-Za-z]{1,10}" minlength="1" maxlength="10" title=""
+                  placeholder="{{this}}" required>
+                <div class="valid-feedback">
+                  Looks Good!
+                </div>
+                <div class="invalid-feedback" id="invalid-feedback">
+                  Please Correct An Error Here.
+                </div>
+              </div>
+            </div>
+          {{/each}}
+        {{/if}}
+        <button type="button" id="make-it-back" class="btn btn-subscribe">Go Back</button>
+        <button type="button" id="make-it-submit" class="btn btn-subscribe" disabled>Submit</button>
+      </div>
+      <div class="tags-footer smoke">
+        <div class="d-flex flex-row justify-content-start tags-body">
+          {{#if article.tags}}
+            {{#if article.tags.length}}
+              {{#each article.tags}}
+                <div class="tag-display">{{this}}</div>
+              {{else}}
+                <div class="tag-display">{{article.tags}}</div>
+              {{/each}}
+            {{/if}}
+          {{/if}}
+        </div>
+      </div>
+      <div class="d-flex flex-row flex-fill flex-wrap social-sharing-container">
+        <button class="make-it-btn btn-subscribe" id="make-it-btn" type="button">Make It Yours</button>
+        <div class="d-inline-flex fb-share-button mx-1" data-href="https://sots-9e289.firebaseapp.com/articles/"
+          + {{shareurl}} data-layout="button" data-size="large" data-mobile-iframe="true">
+          <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsots-9e289.firebaseapp.com%2Farticles%2F&amp;src=sdkpreparse"
+            class="fb-xfbml-parse-ignore">Share</a>
+        </div>
+        <div class="d-inline-flex mx-1">
+          <a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-url="https://sots-9e289.firebaseapp.com/{{article.id}}"
+            data-text="Hello World" data-hashtags="SauceOTS" data-size="large" data-show-count="false"
+            data-related="SauceOTS">Tweet</a>
+        </div>
+      </div>
+    </div>
+    <div class="d-block col-sm-12 col-lg-4 col-xl-4 sidebar-padding">
+      <div class="featured-posts-container">
+        <h4>Recommended</h4>
+        <div class="featured-posts-body-primary card-shadow">
+          <a class="card-default-link" href="/articles/{{sidebar.0.id}}"></a>
+          <img class="lazy" src="{{sidebar.0.lqip_image_download_url}}" data-src="{{sidebar.0.image_download_url}}"
+            alt="Image Not Found" onerror="this.onerror=null;this.src='/default-article-image.jpg';" />
+          <div class="d-flex flex-column align-items-start justify-content-end featured-posts-title-date-container-primary">
+            <div class="featured-posts-title-primary">{{sidebar.0.title}}</div>
+            <div class="featured-posts-date-primary">{{sidebar.0.date}}</div>
+          </div>
+        </div>
+        <div class="featured-posts-body-secondary card-shadow">
+          <a class="card-default-link" href="/articles/{{sidebar.1.id}}"></a>
+          <img class="featured-posts-img-secondary lazy" src="{{sidebar.1.lqip_image_download_url}}"
+            data-src="{{sidebar.1.image_download_url}}" alt="Image Not Found" onerror="this.onerror=null;this.src='/default-article-image.jpg';" />
+          <div class="d-flex flex-column align-items-start justify-content-end featured-posts-title-date-container-primary">
+            <div class="featured-posts-title-secondary">{{sidebar.1.title}}</div>
+            <div class="featured-posts-date-secondary">{{sidebar.1.date}}</div>
+          </div>
+        </div>
+        <div class="featured-posts-body-secondary card-shadow">
+          <a class="card-default-link" href="/articles/{{sidebar.2.id}}"></a>
+          <img class="featured-posts-img-secondary lazy" src="{{sidebar.2.lqip_image_download_url}}"
+            data-src="{{sidebar.2.image_download_url}}" alt="Image Not Found" onerror="this.onerror=null;this.src='/default-article-image.jpg';" />
+          <div class="d-flex flex-column align-items-start justify-content-end featured-posts-title-date-container-primary">
+            <div class="featured-posts-title-secondary">{{sidebar.2.title}}</div>
+            <div class="featured-posts-date-secondary">{{sidebar.2.date}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="d-flex flex-row flex-fill previous-next-container">
+    <div class="previous-next-image-wrapper">
+      <img class="previous-next-image lazy" src={{next.0.lqip_image_download_url}} data-src={{next.0.image_download_url}}></img>
+    </div>
+    <div class="d-flex flex-column flex-fill align-items-center justify-content-center previous-next-content">
+      <a class="card-default-link" href="/articles/{{next.0.id}}"></a>
+      <div class="previous-next-label">Next Article</div>
+      <div class="previous-next-title">{{next.0.title}}</div>
+    </div>
+  </div>
+  {{> beta-blox-footer}}
+  {{> copyright-footer}}
+  <div id="banned-words" hidden>{{bannedList}}</div>
+  <script defer src="/scripts/make-it.js"></script>
