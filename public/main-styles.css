@@ -366,9 +366,10 @@ body,
 }
 
 .card-image-wrapper {
+  width: 100%;
   position: relative;
   overflow: hidden;
-  padding-bottom: 62.5%;
+  padding-bottom: 56.25%;
 }
 
 .card-image {
@@ -376,6 +377,9 @@ body,
   height: auto;
   position: absolute;
   top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   object-fit: cover;
 }
 
@@ -635,12 +639,23 @@ body,
 }
 
 .image-preview-container {
-  width: 228px;
-  height: 128px;
+  width: 100%;
 }
 
 .image-preview {
-  width: 228px;
-  height: 128px;
+  width: 100%;
+  height: 100%;
   background-color: #898e65;
+}
+
+.privacy-body {
+  justify-content: start;
+  text-justify: distribute;
+  white-space: pre-line;
+  font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 300)));
+  padding: 0 0 6% 0;
+}
+
+.privacy-body a {
+  color: #898e65;
 }

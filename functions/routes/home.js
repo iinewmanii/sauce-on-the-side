@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
   let articlesDate = '';
   let articlesString = '';
   let articlesObject = '';
-  const featuredPostsEndDate = new Date(new Date().setDate(new Date().getDate() - 90));
+  const featuredPostsEndDate = new Date(new Date().setDate(new Date().getDate() - 30));
   const tagList = utils.getTagList;
   const articles = db.collection('articles');
   try {

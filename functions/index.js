@@ -29,6 +29,7 @@ const loginRoute = require('./routes/login.js');
 const addArticleRoute = require('./routes/add-article.js');
 const editArticleRoute = require('./routes/edit-article.js');
 const tagRoute = require('./routes/tag.js');
+const privacyPolicyRoute = require('./routes/privacy-policy.js');
 
 const isEqualHelper = (a, b, opts) => {
   if (a == b) {
@@ -70,6 +71,8 @@ app.use(csp({
       'https://cdnjs.cloudflare.com',
       'https://connect.facebook.net/en_US/sdk.js',
       'https://platform.twitter.com',
+      'https://www.googletagmanager.com',
+      'https://www.google-analytics.com',
     ],
     styleSrc: [
       // eslint-disable-next-line quotes
@@ -95,6 +98,8 @@ app.use(csp({
       'https://storage.googleapis.com/sots-9e289.appspot.com/',
       'https://static.xx.fbcdn.net/',
       'https://syndication.twitter.com',
+      'https://www.googletagmanager.com',
+      'https://www.google-analytics.com',
     ],
     // eslint-disable-next-line quotes
     mediaSrc: ["'none'"],
@@ -114,6 +119,8 @@ app.use(csp({
       "'self'",
       'https://firestore.googleapis.com',
       'https://connect.facebook.net',
+      'https://www.googletagmanager.com',
+      'https://www.google-analytics.com',
     ],
     formAction: [
       // eslint-disable-next-line quotes
@@ -148,6 +155,7 @@ app.use(loginRoute);
 app.use(addArticleRoute);
 app.use(editArticleRoute);
 app.use(tagRoute);
+app.use(privacyPolicyRoute);
 
 app.engine('handlebars', exphbs({
   defaultLayout: 'index',

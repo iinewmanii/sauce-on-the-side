@@ -6,7 +6,11 @@ node_modules
 
 .firebase
 
+.DS_Store
+
 firebase-config.json
+
+firestore-debug.log
 
 initialize-firebase.js
 

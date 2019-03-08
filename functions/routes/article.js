@@ -9,9 +9,9 @@ const {getBannedWordsList} = require('./utils');
 router.get('/articles/:id', async (req, res) => {
   try {
     const bannedList = getBannedWordsList;
-    const shareUrl = 'https://sots-9e289.firebaseapp.com/articles/' + req.params.id;
+    const shareUrl = 'https://sauceots.com/articles/' + req.params.id;
     const byViewCount = [];
-    const featuredPostsEndDate = new Date(new Date().setDate(new Date().getDate() - 90));
+    const featuredPostsEndDate = new Date(new Date().setDate(new Date().getDate() - 60));
     const articleRef = db.collection('articles').doc(req.params.id);
     const article = await articleRef.get();
     let shareDescription = article.data().body;

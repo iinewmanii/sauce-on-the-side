@@ -55,15 +55,15 @@
         </div>
       </div>
       <div class="d-flex flex-row flex-fill flex-wrap social-sharing-container">
-        <button class="make-it-btn btn-subscribe" id="make-it-btn" type="button">Make It Yours</button>
-        <div class="d-inline-flex fb-share-button mx-1" data-href="https://sots-9e289.firebaseapp.com/articles/"
-          + {{shareurl}} data-layout="button" data-size="large" data-mobile-iframe="true">
-          <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsots-9e289.firebaseapp.com%2Farticles%2F&amp;src=sdkpreparse"
+        {{!-- <button class="make-it-btn btn-subscribe" id="make-it-btn" type="button">Make It Yours</button> --}}
+        <div class="d-inline-flex fb-share-button mx-1" data-href="{{shareurl}}"
+          data-layout="button" data-size="large" data-mobile-iframe="true">
+          <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsauceots.com%2F&amp;src=sdkpreparse"
             class="fb-xfbml-parse-ignore">Share</a>
         </div>
         <div class="d-inline-flex mx-1">
-          <a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-url="https://sots-9e289.firebaseapp.com/{{article.id}}"
-            data-text="Hello World" data-hashtags="SauceOTS" data-size="large" data-show-count="false"
+          <a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-url="https://www.sauceots.com/articles/{{article.id}}"
+            data-text="So funny!" data-hashtags="SauceOTS" data-size="large" data-show-count="false"
             data-related="SauceOTS">Tweet</a>
         </div>
       </div>
@@ -115,4 +115,4 @@
   {{> beta-blox-footer}}
   {{> copyright-footer}}
   <div id="banned-words" hidden>{{bannedList}}</div>
-  <script defer src="/scripts/make-it.js"></script>
+  {{!-- <script defer src="/scripts/make-it.js"></script> --}}
